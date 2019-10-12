@@ -1,0 +1,204 @@
+html {
+    height: 100vh;
+    width: 100vw;
+    body {
+      .Contents {
+        display:flex;
+        &__index-side {
+          .side-bar {
+            background-color: #2f3e51;
+            display: inline-block;
+            float: left;
+            width: 300px;
+            height: 100vh;
+            overflow: scroll;
+            .header {
+              height: 0px;
+              font-size: 16px;
+              font-weight: bold; 
+              color: $white;
+              background-color: #253141;
+              padding: 40px 20px 80px 20px; 
+              h3 {
+                display: inline-block;
+                float: left;
+                font-weight: bold; 
+              }
+              li {
+                display: inline-block;
+                float: right;
+                padding: 0 0 0 4px;
+                .icon{
+                  color: $white;
+                }
+              }
+            }
+            .items {
+              padding: 20px 20px 40px 20px;
+              font-weight:bold; 
+              a {
+                text-decoration: none;
+              }
+              .item {
+                &__name {
+                  font-size: 15px;
+                  padding: 20px 0 5px 0;
+                  font-weight: bold; 
+                  color: $white;
+                }
+                &__message {
+                  font-size: 11px;
+                  padding: 0 0 40px 0;
+                  font-weight: bold; 
+                  color: $white;
+                  a {
+                    color: $white;
+                    text-decoration: underline;
+                  }
+                }
+              }
+            }
+          }
+        }
+        &__index-main {
+          width: calc(100vw - 300px);
+          left: 300px;
+          top: 0px;
+          bottom: 100px;
+          background-color: #fafafa;
+          height: 100vh;
+          overflow: scroll;
+          &__title{
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 20px;
+          }
+          &__main-header {
+            width: 100%;
+            clear: both;
+            padding: 0 40px;
+            height: 120px;
+            background-color: $white;
+            display: inline-block;
+            border-bottom: 1px solid #eeeeee;
+            &__current-group {
+              color:#333333;
+              float: left;
+              &__name {
+                font-size:20px;
+                padding: 35px 0 12px 0;
+              }
+              &__member-list {
+                font-size:12px;
+                color: $mid_grey;
+                &__member{
+                }
+              }
+            }
+            &__edit-btn {
+              margin-top: 28px; 
+              padding: 0 20px;
+              height: 40px;
+              font-size: 12px;
+              color: $strong-blue;
+              float: right;
+              position: absolute;
+              right: 20px;
+              line-height: 40px;
+              border: solid 1px $strong-blue;
+            }
+          }
+          &__product {
+            margin-bottom: 30px;
+            padding: 46px 0px 40px 40px;
+            display: inline-block;
+            font-weight:bold; 
+            color: $main-color;
+            &__content {
+              color: $main-color;
+              padding: 0 0 0 100px;
+              img{
+                height: 200px;
+                width: 200px;
+              }
+            }
+          }
+          &__messages {
+            padding: 46px 0px 40px 40px;
+            &__message {
+              &__upper-info {
+                &__user{
+                  display: inline-block;
+                  font-weight:bold; 
+                  color: $main-color;
+                }
+                &__date{ 
+                  display: inline-block;
+                  font-size: 12px;
+                  color: $mid_grey;
+                }
+              }
+              &__text {
+                color: $main-color;
+                padding-bottom: 100px;
+              }
+            }
+          }
+          &__form {
+            position: fixed;
+            bottom: 0%;
+            height: 90px;
+            width: 100%;
+            background-color: #ddd;
+            .form {
+              margin: 20px 0 0 0;
+              display: inline-block;
+              width: 100%;
+              padding: 0px 40px 0px 40px;
+              &__message {
+                height: 50px;
+                padding: 0 10px 0 10px; 
+                background-color: $white;
+                display: inline-block;
+                float: left;
+                width: calc(100vw - 520px);
+              }
+              .form__mask {
+                background-color: $white;
+                &__image {
+                  color: $main-color;
+                  height: 50px;
+                  .icon {
+                    float: left;
+                    margin: auto;
+                    line-height: 55px;
+                    position: relative;
+                    right: 40px;
+                    font-size: 25px;
+                  }
+                  .hidden {
+                    display: inline-block;
+                    float: right;
+                    visibility: hidden;
+                  }
+                }
+              }
+              &__submit {
+              width: 100px;
+              height: 50px;
+              background-color: $strong-blue;
+              text-align: center;
+              color: $white;
+              border: none;
+              float: right;
+              position: relative;
+              right: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
