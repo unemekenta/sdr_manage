@@ -1,0 +1,101 @@
+@import "variable";
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic,
+    メイリオ, Meiryo, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin userRatingIcon($icon-color) {
+  width: 20px;
+  height: 20px;
+  color: $icon-color;
+}
+
+@mixin shareBtn($icon-color) {
+  background-color: $icon-color;
+  height: 44px;
+  width: 44px;
+  border-radius: 4px;
+  line-height: 44px;
+  font-size: 24px;
+}
+
+@mixin actionBtn($background-color, $font-size, $font-weight) {
+  position: relative;
+  height: 60px;
+  line-height: 60px;
+  display: block;
+  margin: 16px 0;
+  background-color: $background-color;
+  color: #fff;
+  font-size: $font-size;
+  line-height: 56px;
+  text-align: center;
+  font-weight: $font-weight;
+}
+
+.default-container {
+  .product {
+    width: 700px;
+    margin: 24px auto 0;
+    padding: 24px 40px 40px;
+    background-color: $white;
+    &__container{
+      &__name{
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        word-wrap: break-word;
+        line-height: 1.4;
+      }
+    }
+    &__main-contents{
+      display: flex;
+      justify-content: space-between;
+      &__photo{
+        max-width: 700px;
+        max-height: 700px;
+        background-color: #fafafa;
+        &__photo-main{
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          margin: 0 0;
+          position: relative;
+          img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+    &__description{
+      &__text{
+        padding: 32px 0 0;
+        font-size: 18px;
+        line-height: 1.5;
+        white-space: pre-wrap;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.Contents__index-main__main-header
+  .Contents__index-main__main-header__current-group
+    .Contents__index-main__main-header__current-group__name
+      = link_to 'SDR Sales Staff', root_path
+    .Contents__index-main__main-header__current-group__member-list
+      .Contents__index-main__main-header__current-group__member-list__member
+        -# - @group.group_users.each do |group_user|
+        -#   = group_user.user.name
+  .Contents__index-main__main-header__edit-btn
+    -# = link_to "Edit", edit_group_path(@group)
