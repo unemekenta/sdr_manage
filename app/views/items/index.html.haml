@@ -1,0 +1,29 @@
+.Contents
+  .Contents__index-side
+    = render partial: "./products/sidebar"
+  .Contents__index-main
+    = render partial: "./products/main-header"
+    .default-container
+    - @items.each do |item|
+      .product
+        .product__container
+          %h1.product__container__name
+            = item.name
+        .product__main-contents
+          .product__main-contents__photo
+            .product__main-contents__photo__photo-main
+              = image_tag item.image
+    
+        .product__description
+          %p.product__description__text
+            仕入れ総数
+            = item.all_number
+          %p.product__description__text
+            販売数
+            = item.sold_number
+          %p.product__description__text
+            残数
+            = item.all_number - item.sold_number
+          %p.product__description__text
+            メモ
+            = item.memo
