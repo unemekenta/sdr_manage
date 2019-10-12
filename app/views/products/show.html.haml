@@ -1,0 +1,30 @@
+.Contents
+  .Contents__index-side
+    = render partial: "sidebar"
+  .Contents__index-main
+    = render partial: "main-header"
+    .default-container
+      .product
+        .product__container
+          %h1.product__container__name
+            = @product.name
+        .product__main-contents
+          .product__main-contents__photo
+            .product__main-contents__photo__photo-main
+              = image_tag @product.image
+    
+        .product__description
+          %p.product__description__text
+            詳細：
+            = @product.description
+          %p.product__description__text
+            メモ：
+            = @product.memo
+          %p.product__description__text
+            販売開始：
+            = @product.start
+          %p.product__description__text
+            販売終了：
+            = @product.end
+          %p.product__description__text
+            = link_to '在庫へ', product_items_path(@product.id)

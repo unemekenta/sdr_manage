@@ -1,0 +1,53 @@
+.single-container
+  %header.single-container__header
+    %h1
+      = link_to root_path do
+        戻る
+
+  %main.single-main
+    %section.l-single-container
+      .sell-container
+        %h2.sell-container__header 商品の情報を入力
+      = form_for @product do |product|
+        .sell-container__sell-form
+ 
+          .sell-container__sell-form__sell-content
+            = product.label :name do
+              商品名
+              %span.form-require 必須
+            %div
+              = product.text_field :name, class: "input-default", placeholder: "商品名  (必須 40文字まで)"
+
+          .sell-container__sell-form__sell-content
+            = product.label :image do
+              画像
+            = product.file_field :image
+
+          .sell-container__sell-form__sell-content
+            = product.label :description do
+              商品の説明
+              %span.form-require 必須
+            = product.text_area :description, class: "textarea-default", rows: "5", placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）"
+          .sell-container__sell-form__sell-content
+            = product.label :memo do
+              商品の説明
+              %span.form-require 必須
+            = product.text_area :memo, class: "textarea-default", rows: "5", placeholder: "商品メモ"
+
+          .sell-container__sell-form__sell-content
+            = product.label :start do
+              商品の説明
+              %span.form-require 必須
+            = product.date_field :start, class: "textarea-default", rows: "5"
+
+          .sell-container__sell-form__sell-content
+            = product.label :end do
+              商品の説明
+              %span.form-require 必須
+            = product.date_field :end, class: "textarea-default", rows: "5"
+
+            = product.submit "種類登録へ", class: "btn-default"
+            = link_to "もどる", root_path, class: "btn-default btn-gray"
+  %footer
+    .default-container
+      .single
