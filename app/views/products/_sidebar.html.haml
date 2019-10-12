@@ -1,0 +1,48 @@
+.side-bar
+  .header
+    %h3.header__name
+      = current_user.name
+    -#   = current_user.name
+    %ul.header__lists
+      %li.list
+        = link_to new_product_path do
+          = fa_icon 'pencil-square-o', class: 'icon'
+      %li.list
+        = link_to edit_user_path(current_user) do
+          = fa_icon 'cog', class: 'icon'
+
+  %ul.items
+    %li.item
+      .item__name
+        ヒアリングシート
+      .item__message
+        = link_to 'ヒアリング内容を書き込む', "https://docs.google.com/spreadsheets/d/1UngIsk_uqIDs2Wj3Zx6d29Qt6-6ox4yVq_uoOfR67jg/edit?usp=sharing", target: :_blank
+      
+      .item__name
+        売り上げ報告
+      .item__message
+      -# = link_to ""
+        その日の売り上げを報告する
+     
+      .item__name
+        販売マニュアル
+      .item__message
+        -# = link_to ""
+        販売マニュアルを読む
+     
+      .item__name
+        在庫管理
+      .item__message
+        -# = link_to ""
+        在庫を確認する
+    
+      .item__name
+        プロダクト追加
+      .item__message
+        = link_to 'プロダクトを追加する', new_product_path(current_user)
+
+      .item__name
+        シフト
+      .item__message
+        -# = link_to ""
+        シフトを確認する

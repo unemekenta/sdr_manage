@@ -1,0 +1,22 @@
+.Contents
+  .Contents__index-side
+    = render partial: "sidebar"
+  .Contents__index-main
+    = render partial: "main-header"
+    .Contents__index-main__title
+      Product Information
+    - @products.each do |product|
+      .Contents__index-main__product
+        .Contents__index-main__product__content
+          = image_tag product.image
+        .Contents__index-main__product__content
+          商品名：
+          = product.name
+        .Contents__index-main__product__content
+          展示開始時期：
+          = product.start
+        .Contents__index-main__product__content
+          展示終了時期：
+          = product.end
+        .Contents__index-main__product__content
+          = link_to '詳細',product_path(product)
