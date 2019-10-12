@@ -1,0 +1,48 @@
+.single-container
+  %header.single-container__header
+    %h1
+      = link_to root_path do
+        戻る
+
+  %main.single-main
+    %section.l-single-container
+      .sell-container
+        %h2.sell-container__header 商品の情報を入力
+      = form_for @item ,url: {:action => :create} do |item|
+        .sell-container__sell-form
+ 
+          .sell-container__sell-form__sell-content
+            = item.label :name do
+              商品名
+              %span.form-require 必須
+            %div
+              = item.text_field :name, class: "input-default", placeholder: "商品名  (必須 40文字まで)"
+
+          .sell-container__sell-form__sell-content
+            = item.label :image do
+              画像
+            = item.file_field :image
+
+          .sell-container__sell-form__sell-content
+            = item.label :all_number do
+              仕入れ総数
+              %span.form-require 必須
+            = item.number_field :all_number, class: "textarea-default"
+
+          .sell-container__sell-form__sell-content
+            = item.label :sold_number do
+              販売数
+              %span.form-require 必須
+            = item.number_field :sold_number, class: "textarea-default"
+
+          .sell-container__sell-form__sell-content
+            = item.label :memo do
+              メモ
+              %span.form-require 必須
+            = item.text_field :memo, class: "textarea-default", rows: "5", placeholder: "メモ  (必須 40文字まで)"
+
+            = item.submit "登録", class: "btn-default"
+            = link_to "もどる", root_path, class: "btn-default btn-gray"
+  %footer
+    .default-container
+      .single
